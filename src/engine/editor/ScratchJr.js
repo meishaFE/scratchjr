@@ -202,15 +202,18 @@ export default class ScratchJr {
   }
 
   static clearEventAndTimer() {
-    window.ontouchstart = null;
-    window.ontouchmove = null;
-    window.ontouchend = null;
-    window.onresize = null;
-    window.onmouseup = null;
-    window.onmousemove = null;
-    window.ontouchcancel = null;
-    window.ondevicemotion = null;
+    window.onmouseup = undefined;
+    window.onmousemove = undefined;
+    window.ontouchcancel = undefined;
+    window.ondevicemotion = undefined;
+    window.ontouchstart = undefined;
+    window.ontouchend = undefined;
+    document.ontouchmove = undefined;
+    window.onresize = undefined;
     clearInterval(runtime.intervalId);
+
+    BlockSpecs.initVal();
+
     const playerHide = document.getElementById('playerHide');
     playerHide.parentNode.removeChild(playerHide);
   }

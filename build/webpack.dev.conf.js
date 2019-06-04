@@ -19,7 +19,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new CopyWebpackPlugin([
       {
         from: 'static',
-        to: 'dist/static'
+        to: 'static'
       }
     ]),
 
