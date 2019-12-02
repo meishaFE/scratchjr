@@ -1,0 +1,134 @@
+:global {
+  .stagejr {
+    position: relative;
+    height: 3.52rem;
+    background-color: #fff;
+
+    .stageContainer {
+      position: relative;
+      height: 2.82rem;
+      overflow: hidden;
+
+      .stageCover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .stage {
+        background: #ffffff;
+        overflow: hidden;
+        width: 480px;
+        height: 360px;
+        transform-origin: 0 0;
+      }
+    }
+
+    .btnContainer {
+      height: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .go {
+        width: 0.4rem;
+        height: 0.4rem;
+        background: url('./images/go.svg') center center;
+        background-size: auto 100%;
+        margin-right: 0.5rem;
+      }
+
+      .go.on {
+        background-image: url('./images/go.svg');
+      }
+
+      .go.off:active {
+        background-image: url('./images/goPressed.svg');
+      }
+
+      .go.off {
+        background-image: url('./images/stop1.svg');
+      }
+
+      .go.on:active {
+        background-image: url('./images/stopPressed1.svg');
+      }
+
+      .resetall {
+        width: 0.4rem;
+        height: 0.4rem;
+        background: url('./images/resetAll.svg') center center;
+        background-size: auto 110%;
+      }
+
+      .resetall:active {
+        background-image: url('./images/resetAllPressed.svg');
+      }
+    }
+
+    .projectImg {
+      position: absolute;
+      width: 100%;
+      height: 2.82rem;
+      top: 0;
+      left: 0;
+      background: center center;
+      background-size: 105%;
+    }
+
+    .playBtn {
+      position: absolute;
+      width: 100%;
+      height: 2.82rem;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.2);
+
+      img {
+        position: absolute;
+        width: 0.6rem;
+        height: 0.6rem;
+        top: 50%;
+        left: 50%;
+        margin: -0.3rem 0 0 -0.3rem;
+        cursor: pointer;
+      }
+    }
+
+    p.balloon {
+      position: absolute;
+      text-align: center;
+      color: #ffffff;
+      font-family: Verdana;
+      font-size: 14px;
+      font-weight: bold;
+      overflow: hidden;
+      z-index: 4;
+      -webkit-text-size-adjust: auto;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .stagepage {
+      position: absolute;
+      width: 480px;
+      height: 360px;
+      transform-style: preserve-3d;
+      text-size-adjust: auto;
+    }
+  }
+
+  #playerHide {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 9999px;
+    opacity: 0;
+    overflow: hidden;
+  }
+}

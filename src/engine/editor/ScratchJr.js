@@ -12,17 +12,7 @@ import ScriptsPane from './ui/ScriptsPane';
 import Events from '../utils/Events';
 import BlockSpecs from './blocks/BlockSpecs';
 import Runtime from './engine/Runtime';
-import {
-  libInit,
-  gn,
-  scaleMultiplier,
-  newHTML,
-  isAndroid,
-  isTablet,
-  getUrlVars,
-  CSSTransition3D,
-  frame
-} from '../utils/lib';
+import { libInit, gn, newHTML, isTablet, CSSTransition3D, frame } from '../utils/lib';
 
 let workingCanvas = document.createElement('canvas');
 let workingCanvas2 = document.createElement('canvas');
@@ -202,18 +192,15 @@ export default class ScratchJr {
   }
 
   static clearEventAndTimer() {
-    window.onmouseup = undefined;
-    window.onmousemove = undefined;
-    window.ontouchcancel = undefined;
-    window.ondevicemotion = undefined;
-    window.ontouchstart = undefined;
-    window.ontouchend = undefined;
-    document.ontouchmove = undefined;
-    window.onresize = undefined;
+    window.ontouchstart = null;
+    window.ontouchmove = null;
+    window.ontouchend = null;
+    window.onresize = null;
+    window.onmouseup = null;
+    window.onmousemove = null;
+    window.ontouchcancel = null;
+    window.ondevicemotion = null;
     clearInterval(runtime.intervalId);
-
-    BlockSpecs.initVal();
-
     const playerHide = document.getElementById('playerHide');
     playerHide.parentNode.removeChild(playerHide);
   }
@@ -531,14 +518,11 @@ export default class ScratchJr {
     });
   }
 
-  static textClicked(e, div) {
-  }
+  static textClicked(e, div) {}
 
-  static handleTextFieldFocus(e) {
-  }
+  static handleTextFieldFocus(e) {}
 
-  static handleTextFieldBlur(e) {
-  }
+  static handleTextFieldBlur(e) {}
 
   /////////////////////////////////////////
   //Numeric keyboard

@@ -1,12 +1,10 @@
 import { isiOS, gn } from '../utils/lib';
 import IO from './IO';
-import Lobby from '../lobby/Lobby';
 import Alert from '../editor/ui/Alert';
 import ScratchAudio from '../utils/ScratchAudio';
 import AppUsage from '../utils/AppUsage';
 import Record from '../editor/ui/Record';
 import Camera from '../painteditor/Camera';
-import browserInterface from '../browser';
 
 //////////////////////////////////////////////////
 //  Tablet interface functions

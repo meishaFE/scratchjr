@@ -1,5 +1,8 @@
 import JsZip from 'jszip';
 
+/**
+ * @desc 解析项目的文件
+ */
 async function load(fileBase64) {
   const zip = new JsZip();
   const resZip = await zip.loadAsync(fileBase64.split(',')[1], { base64: true });
@@ -10,8 +13,10 @@ async function load(fileBase64) {
     const fullName = filename.split('/').pop();
     const fileType = fullName.split('.').pop();
 
+    // 将自定义的素材转成 base64
     if (fileType === 'svg') {
-      files[fullName] = 'data:image/svg+xml;base64,' + (await resZip.files[filename].async('base64'));
+      files[fullName] =
+        'data:image/svg+xml;base64,' + (await resZip.files[filename].async('base64'));
     }
 
     if (fileType === 'png') {

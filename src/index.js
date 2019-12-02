@@ -1,1 +1,3 @@
-console.log(233);
+import PlayerJR from './components/player/index.jsx';
+
+export { PlayerJR };

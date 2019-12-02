@@ -1,0 +1,8 @@
+{
+  "name": "scratchjr",
+  "version": "1.0.0",
+  "description": "scratchjr运行器组件",
+  "author": "Troy",
+  "license": "ISC",
+  "main": "index.js"
+}

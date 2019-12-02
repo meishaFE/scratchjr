@@ -18,7 +18,6 @@ import {
   setProps,
   setCanvasSize
 } from '../../utils/lib';
-import store from 'store';
 
 let metadata = undefined;
 let mediaCount = -1;
@@ -464,8 +463,6 @@ export default class Project {
       }
     }
 
-    const account = store.get('account');
-    metadata.userid = account.userId;
     metadata.projectid = ScratchJr.projectId ? ScratchJr.projectId : '';
     metadata.id = id;
     metadata.json = Project.getProject(ScratchJr.stage.pages[0].id);

@@ -2,7 +2,6 @@ import iOS from './iOS';
 import MediaLib from './MediaLib';
 import JSZip from 'jszip';
 import { setCanvasSize, drawThumbnail, gn } from '../utils/lib';
-import Lobby from '../lobby/Lobby';
 import SVG2Canvas from '../utils/SVG2Canvas';
 
 const database = 'projects';
