@@ -64,8 +64,8 @@ class PlayerJR extends Component {
         });
       });
     } catch (err) {
+      console.log('载入项目失败');
       console.log(err);
-      $utils.errMsg(err);
     }
 
     this.setState({ loading: false });
@@ -77,8 +77,9 @@ class PlayerJR extends Component {
   }; */
 
   render() {
-    const { isLoadProject, loading } = this.state;
-    const { thumbnail } = this.props;
+    const { loading } = this.state;
+    // const { isLoadProject, loading } = this.state;
+    // const { thumbnail } = this.props;
 
     return (
       <React.Fragment>

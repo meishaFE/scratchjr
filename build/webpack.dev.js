@@ -86,7 +86,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: 'static',
-        to: 'static'
+        to: 'static/scratchjr'
       }
     ])
   ]

@@ -1,3 +1,4 @@
+import styles from './index.less';
 import React from 'react';
 
 class Index extends React.Component {
@@ -7,12 +8,29 @@ class Index extends React.Component {
 
   async componentDidMount() {
     const { PlayerJR } = await import('../../src/index');
-    console.log(PlayerJR);
     this.setState({ PlayerDynamic: PlayerJR });
   }
 
+  getProject = async () => {
+    const dataBase64 = await import('./data/test.js');
+    return dataBase64.default;
+  };
+
   render() {
-    return <div>hello</div>;
+    const { PlayerDynamic } = this.state;
+
+    return (
+      <div className={styles.container}>
+        <div className={styles.player}>
+          {PlayerDynamic && (
+            <PlayerDynamic
+              thumbnail={require('./data/thumbnail.png')}
+              getProject={this.getProject}
+            />
+          )}
+        </div>
+      </div>
+    );
   }
 }
 
