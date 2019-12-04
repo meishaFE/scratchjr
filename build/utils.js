@@ -1,5 +1,5 @@
 const path = require('path');
-const postcssVars = require('postcss-simple-vars');
+const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -11,9 +11,8 @@ exports.styleConfig = function(options) {
       sourceMap: options.sourceMap,
       modules: true, // 是否启用 css 模块化
       importLoaders: 1, // css-loader 后面是否还有其他的 loader
-      modules: {
-        localIdentName: '[name]_[local]_[hash:base64:5]'
-      }
+      localIdentName: '[name]_[local]_[hash:base64:5]',
+      camelCase: true
     }
   };
   const postcssLoader = {
@@ -22,7 +21,12 @@ exports.styleConfig = function(options) {
       sourceMap: options.sourceMap,
       ident: 'postcss',
       plugins: function() {
-        return [postcssImport, postcssVars];
+        return [
+          postcssImport,
+          autoprefixer({
+            browsers: ['last 3 versions', 'Safari >= 8', 'iOS >= 8']
+          })
+        ];
       }
     }
   };
@@ -31,23 +35,23 @@ exports.styleConfig = function(options) {
   if (options.extract) {
     return [
       {
-        test: /\.css$/,
-        use: [miniCssExtractPlugin.loader, cssLoader, postcssLoader]
-      },
-      {
         test: /\.less$/,
         use: [miniCssExtractPlugin.loader, cssLoader, postcssLoader, lessLoader]
+      },
+      {
+        test: /\.css$/,
+        use: [miniCssExtractPlugin.loader, { loader: 'css-loader', options: { importLoaders: 1 } }]
       }
     ];
   } else {
     return [
       {
-        test: /\.css$/,
-        use: [styleLoader, cssLoader, postcssLoader]
-      },
-      {
         test: /\.less$/,
         use: [styleLoader, cssLoader, postcssLoader, lessLoader]
+      },
+      {
+        test: /\.css$/,
+        use: [styleLoader, { loader: 'css-loader', options: { importLoaders: 1 } }]
       }
     ];
   }
