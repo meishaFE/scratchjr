@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.js",
     "build": "webpack --inline --progress --config build/webpack.build.js",
-    "release": "git subtree push --prefix=dist origin master"
+    "release": "git subtree push --prefix=dist origin master --squash"
   },
   "author": "Troy",
   "license": "ISC",
