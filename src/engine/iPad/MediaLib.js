@@ -34,7 +34,7 @@ export default class MediaLib {
     }
 
     static loadMediaLib (root, whenDone) {
-        path = mediaSetting.path;
+        path = window.sjrStatic + mediaSetting.path;
         samples = mediaSetting.samples;
         sprites = mediaSetting.sprites;
         backgrounds = mediaSetting.backgrounds;

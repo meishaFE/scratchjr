@@ -19,7 +19,17 @@ export default class Sound {
 
   play() {
     this.playing = true;
-    this.audio.play();
+
+    // scratchjr
+    // 第一次播放会因为用户没有触发点击报错，延迟执行
+    if (this.isPlayed) {
+      this.audio.play();
+    } else {
+      setTimeout(() => {
+        this.isPlayed = true; // 标记是否是第一次播放
+        this.audio.play();
+      }, 100);
+    }
   }
 
   // 返回true/false

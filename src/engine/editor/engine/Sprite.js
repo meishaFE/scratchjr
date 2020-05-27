@@ -1130,7 +1130,7 @@ export default class Sprite {
   drawCloseButton() {
     var ctx = this.div.getContext('2d');
     var img = document.createElement('img');
-    img.src = '/static/scratchjr/assets/ui/closeit.svg';
+    img.src = window.sjrStatic + '/assets/ui/closeit.svg';
     if (!img.complete) {
       img.onload = function() {
         ctx.drawImage(0, 0);

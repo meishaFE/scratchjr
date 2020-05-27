@@ -343,9 +343,9 @@ export default class Thumbs {
         var c = newHTML('div', 'empty', tb);
         var img;
         if (window.Settings.edition == 'PBS') {
-            img = newImage(c, '/static/scratchjr/assets/ui/newpage.svg');
+            img = newImage(c, window.sjrStatic + '/assets/ui/newpage.svg');
         } else {
-            img = newImage(c, '/static/scratchjr/assets/ui/newpage.png', {
+            img = newImage(c, window.sjrStatic + '/assets/ui/newpage.png', {
                 position: 'absolute'
             });
         }

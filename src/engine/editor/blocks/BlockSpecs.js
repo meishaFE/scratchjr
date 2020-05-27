@@ -56,14 +56,14 @@ export default class BlockSpecs {
         BlockSpecs.palettes = BlockSpecs.setupPalettesDef();
         BlockSpecs.categories = BlockSpecs.setupCategories();
         if (window.Settings.edition == 'PBS') {
-            BlockSpecs.canvasMask = BlockSpecs.getImageFrom('/static/scratchjr/assets/ui/canvasmask', 'svg');
+            BlockSpecs.canvasMask = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/ui/canvasmask', 'svg');
         } else {
-            BlockSpecs.canvasMask = BlockSpecs.getImageFrom('/static/scratchjr/assets/ui/canvasmask');
+            BlockSpecs.canvasMask = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/ui/canvasmask');
         }
         if (window.Settings.edition != 'PBS') {
-            BlockSpecs.projectThumb = BlockSpecs.getImageFrom('/static/scratchjr/assets/lobby/pmask');
+            BlockSpecs.projectThumb = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/lobby/pmask');
         }
-        IO.requestFromServer('/static/scratchjr/assets/balloon.svg', BlockSpecs.setBalloon);
+        IO.requestFromServer(window.sjrStatic + '/assets/balloon.svg', BlockSpecs.setBalloon);
         loadCount++;
     }
 
@@ -74,44 +74,44 @@ export default class BlockSpecs {
 
 
     static loadGraphics () {
-        BlockSpecs.mic = BlockSpecs.getImageFrom('/static/scratchjr/assets/ui/recordslot', 'svg');
-        BlockSpecs.yellowStart = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/start', 'svg');
-        BlockSpecs.yellowStartH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/startH');
+        BlockSpecs.mic = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/ui/recordslot', 'svg');
+        BlockSpecs.yellowStart = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/start', 'svg');
+        BlockSpecs.yellowStartH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/startH');
 
-        BlockSpecs.yellowCmd = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/yellowCmd', 'svg');
-        BlockSpecs.yellowCmdH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/yellowCmdH');
+        BlockSpecs.yellowCmd = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/yellowCmd', 'svg');
+        BlockSpecs.yellowCmdH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/yellowCmdH');
 
-        BlockSpecs.redEnd = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/endshort', 'svg');
-        BlockSpecs.redEndH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/stopH');
+        BlockSpecs.redEnd = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/endshort', 'svg');
+        BlockSpecs.redEndH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/stopH');
 
-        BlockSpecs.orangeCmd = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/flow', 'svg');
-        BlockSpecs.orangeCmdH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/flowH');
+        BlockSpecs.orangeCmd = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/flow', 'svg');
+        BlockSpecs.orangeCmdH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/flowH');
 
-        BlockSpecs.limeCmd = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/sounds', 'svg');
-        BlockSpecs.limeCmdH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/soundsH');
+        BlockSpecs.limeCmd = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/sounds', 'svg');
+        BlockSpecs.limeCmdH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/soundsH');
 
-        BlockSpecs.pinkCmd = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/looks', 'svg');
-        BlockSpecs.pinkCmdH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/looksH');
+        BlockSpecs.pinkCmd = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/looks', 'svg');
+        BlockSpecs.pinkCmdH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/looksH');
 
-        BlockSpecs.redEndLong = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/endlong', 'svg');
-        BlockSpecs.redEndLongH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/stoplongH');
+        BlockSpecs.redEndLong = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/endlong', 'svg');
+        BlockSpecs.redEndLongH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/stoplongH');
 
-        BlockSpecs.cShape = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/repeat');
-        BlockSpecs.cShapeH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/repeatH');
+        BlockSpecs.cShape = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/repeat');
+        BlockSpecs.cShapeH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/repeatH');
 
-        BlockSpecs.blueCmd = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/blueCmd', 'svg');
-        BlockSpecs.blueCmdH = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/eh/blueCmdH');
+        BlockSpecs.blueCmd = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/blueCmd', 'svg');
+        BlockSpecs.blueCmdH = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/eh/blueCmdH');
 
-        BlockSpecs.textfieldimg = BlockSpecs.getImageFrom('/static/scratchjr/assets/misc/Text-01');
-        BlockSpecs.numfieldimg = BlockSpecs.getImageFrom('/static/scratchjr/assets/misc/Number-01');
-        BlockSpecs.pressbutton = BlockSpecs.getImageFrom('/static/scratchjr/assets/misc/pushbutton-01', 'svg');
-        BlockSpecs.pressbuttonSmall = BlockSpecs.getImageFrom('/static/scratchjr/assets/misc/pushbutton', 'svg');
-        BlockSpecs.caretrepeat = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/caretrepeat');
-        BlockSpecs.cmdS = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/shadowCmd', 'svg');
-        BlockSpecs.startS = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/shadowStart', 'svg');
-        BlockSpecs.endS = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/shadowEndShort', 'svg');
-        BlockSpecs.endLongS = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/shadowEndLong', 'svg');
-        BlockSpecs.repeatS = BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/shadowRepeat');
+        BlockSpecs.textfieldimg = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/misc/Text-01');
+        BlockSpecs.numfieldimg = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/misc/Number-01');
+        BlockSpecs.pressbutton = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/misc/pushbutton-01', 'svg');
+        BlockSpecs.pressbuttonSmall = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/misc/pushbutton', 'svg');
+        BlockSpecs.caretrepeat = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/caretrepeat');
+        BlockSpecs.cmdS = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/shadowCmd', 'svg');
+        BlockSpecs.startS = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/shadowStart', 'svg');
+        BlockSpecs.endS = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/shadowEndShort', 'svg');
+        BlockSpecs.endLongS = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/shadowEndLong', 'svg');
+        BlockSpecs.repeatS = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/shadowRepeat');
 
     }
 
@@ -141,33 +141,33 @@ export default class BlockSpecs {
     static setupCategories () {
         return new Array(
             [
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/StartOn', 'svg'),
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/StartOff', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/StartOn', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/StartOff', 'svg'),
                 window.Settings.categoryStartColor
             ],
             [
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/MotionOn', 'svg'),
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/MotionOff', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/MotionOn', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/MotionOff', 'svg'),
                 window.Settings.categoryMotionColor
             ],
             [
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/LooksOn', 'svg'),
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/LooksOff', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/LooksOn', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/LooksOff', 'svg'),
                 window.Settings.categoryLooksColor
             ],
             [
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/SoundOn', 'svg'),
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/SoundOff', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/SoundOn', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/SoundOff', 'svg'),
                 window.Settings.categorySoundColor
             ],
             [
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/FlowOn', 'svg'),
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/FlowOff', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/FlowOn', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/FlowOff', 'svg'),
                 window.Settings.categoryFlowColor
             ],
             [
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/StopOn', 'svg'),
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/categories/StopOff', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/StopOn', 'svg'),
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/categories/StopOff', 'svg'),
                 window.Settings.categoryStopColor
             ]
         );
@@ -202,77 +202,77 @@ export default class BlockSpecs {
 
     static setupBlocksSpecs () {
         return {
-            'onflag': ['onflag', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/greenFlag', 'svg'),
+            'onflag': ['onflag', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/greenFlag', 'svg'),
                 BlockSpecs.yellowStart, null, null, BlockSpecs.yellowStartH, null, null, BlockSpecs.startS],
             'onmessage': ['onmessage', getshapes, BlockSpecs.yellowStart, 'm', 'Orange',
                 BlockSpecs.yellowStartH, null, null, BlockSpecs.startS],
-            'onclick': ['onclick', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/OnTouch', 'svg'),
+            'onclick': ['onclick', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/OnTouch', 'svg'),
                 BlockSpecs.yellowStart, null, null, BlockSpecs.yellowStartH, null, null, BlockSpecs.startS],
-            'ontouch': ['ontouch', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Bump', 'svg'),
+            'ontouch': ['ontouch', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Bump', 'svg'),
                 BlockSpecs.yellowStart, null, null, BlockSpecs.yellowStartH, null, null, BlockSpecs.startS],
             'message': ['message', sendshapes, BlockSpecs.yellowCmd, 'm', 'Orange',
                 BlockSpecs.yellowCmdH, null, null, BlockSpecs.cmdS],
 
-            'repeat': ['repeat', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Repeat', 'svg'),
+            'repeat': ['repeat', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Repeat', 'svg'),
                 BlockSpecs.cShape, 'n', 4, BlockSpecs.cShapeH, 0, 24, BlockSpecs.repeatS],
 
-            'forward': ['forward', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Foward', 'svg'),
+            'forward': ['forward', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Foward', 'svg'),
                 BlockSpecs.blueCmd, 'n', 1, BlockSpecs.blueCmdH, -20, 20, BlockSpecs.cmdS],
-            'back': ['back', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Back', 'svg'),
+            'back': ['back', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Back', 'svg'),
                 BlockSpecs.blueCmd, 'n', 1, BlockSpecs.blueCmdH, -20, 20, BlockSpecs.cmdS],
-            'up': ['up', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Up', 'svg'),
+            'up': ['up', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Up', 'svg'),
                 BlockSpecs.blueCmd, 'n', 1, BlockSpecs.blueCmdH, -15, 15, BlockSpecs.cmdS],
-            'down': ['down', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Down', 'svg'),
+            'down': ['down', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Down', 'svg'),
                 BlockSpecs.blueCmd, 'n', 1, BlockSpecs.blueCmdH, -15, 15, BlockSpecs.cmdS],
-            'right': ['right', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Right', 'svg'),
+            'right': ['right', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Right', 'svg'),
                 BlockSpecs.blueCmd, 'n', 1, BlockSpecs.blueCmdH, -12, 12, BlockSpecs.cmdS],
-            'left': ['left', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Left', 'svg'),
+            'left': ['left', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Left', 'svg'),
                 BlockSpecs.blueCmd, 'n', 1, BlockSpecs.blueCmdH, -12, 12, BlockSpecs.cmdS],
-            'home': ['home', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Home', 'svg'),
+            'home': ['home', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Home', 'svg'),
                 BlockSpecs.blueCmd, null, null, BlockSpecs.blueCmdH, null, null, BlockSpecs.cmdS],
-            'hop': ['hop', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Hop', 'svg'),
+            'hop': ['hop', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Hop', 'svg'),
                 BlockSpecs.blueCmd, 'n', 2, BlockSpecs.blueCmdH, -15, 15, BlockSpecs.cmdS],
 
 
-            'wait': ['wait', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Wait', 'svg'),
+            'wait': ['wait', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Wait', 'svg'),
                 BlockSpecs.orangeCmd, 'n', 10, BlockSpecs.orangeCmdH, 0, 50, BlockSpecs.cmdS],
             'setspeed': ['setspeed', speeds, BlockSpecs.orangeCmd, 'd', 1,
                 BlockSpecs.orangeCmdH, null, null, BlockSpecs.cmdS],
-            'stopmine': ['stopmine', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Stop', 'svg'),
+            'stopmine': ['stopmine', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Stop', 'svg'),
                 BlockSpecs.orangeCmd, null, null, BlockSpecs.orangeCmdH, null, null, BlockSpecs.cmdS],
 
-            'say': ['say', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Say', 'svg'),
+            'say': ['say', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Say', 'svg'),
                 BlockSpecs.pinkCmd, 't',
                 Localization.localize('SAY_BLOCK_DEFAULT_ARGUMENT'), BlockSpecs.pinkCmdH, null, null, BlockSpecs.cmdS],
-            'show': ['show', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Appear', 'svg'),
+            'show': ['show', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Appear', 'svg'),
                 BlockSpecs.pinkCmd, null, null, BlockSpecs.pinkCmdH, null, null, BlockSpecs.cmdS],
-            'hide': ['hide', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Disappear', 'svg'),
+            'hide': ['hide', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Disappear', 'svg'),
                 BlockSpecs.pinkCmd, null, null, BlockSpecs.pinkCmdH, null, null, BlockSpecs.cmdS],
-            'grow': ['grow', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Grow', 'svg'),
+            'grow': ['grow', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Grow', 'svg'),
                 BlockSpecs.pinkCmd, 'n', 2, BlockSpecs.pinkCmdH, -10, 10, BlockSpecs.cmdS],
-            'shrink': ['shrink', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Shrink', 'svg'),
+            'shrink': ['shrink', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Shrink', 'svg'),
                 BlockSpecs.pinkCmd, 'n', 2, BlockSpecs.pinkCmdH, -10, 10, BlockSpecs.cmdS],
-            'same': ['same', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Reset', 'svg'),
+            'same': ['same', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Reset', 'svg'),
                 BlockSpecs.pinkCmd, null, null, BlockSpecs.pinkCmdH, null, null, BlockSpecs.cmdS],
 
-            'playsnd': ['playsnd', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Speaker', 'svg'),
+            'playsnd': ['playsnd', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Speaker', 'svg'),
                 BlockSpecs.limeCmd, 's', 'pop.mp3', BlockSpecs.limeCmdH, null, null, BlockSpecs.cmdS],
-            'playusersnd': ['playusersnd', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Microphone', 'svg'),
+            'playusersnd': ['playusersnd', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Microphone', 'svg'),
                 BlockSpecs.limeCmd, 'r', '1', BlockSpecs.limeCmdH, null, null, BlockSpecs.cmdS],
             'endstack': ['endstack', null, BlockSpecs.redEnd, null, null,
                 BlockSpecs.redEndH, null, null, BlockSpecs.endS],
-            'forever': ['forever', BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/Forever', 'svg'),
+            'forever': ['forever', BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/Forever', 'svg'),
                 BlockSpecs.redEnd, null, null, BlockSpecs.redEndH, null, null, BlockSpecs.endS],
             'gotopage': ['gotopage', null,
                 BlockSpecs.redEndLong, 'p', '2', BlockSpecs.redEndLongH, null, null, BlockSpecs.endLongS],
             'caretstart': ['caretstart', null,
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/caretstart', 'svg'), null, null, null, null, null],
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/caretstart', 'svg'), null, null, null, null, null],
             'caretend': ['caretend', null,
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/caretend', 'svg'), null, null, null, null, null],
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/caretend', 'svg'), null, null, null, null, null],
             'caretrepeat': ['caretrepeat', null,
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/caretrepeat'), null, null, null, null, null],
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/caretrepeat'), null, null, null, null, null],
             'caretcmd': ['caretcmd', null,
-                BlockSpecs.getImageFrom('/static/scratchjr/assets/blocks/caretcmd', 'svg'), null, null, null, null, null]
+                BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blocks/caretcmd', 'svg'), null, null, null, null, null]
 
         };
     }

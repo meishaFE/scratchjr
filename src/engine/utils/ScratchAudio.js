@@ -27,7 +27,7 @@ export default class ScratchAudio {
    * 删除了默认音效
    */
   static init() {
-    ScratchAudio.addSound('pop.mp3', '/static/scratchjr/pop.mp3', projectSounds);
+    ScratchAudio.addSound('pop.mp3', window.sjrStatic + '/pop.mp3', projectSounds);
   }
 
   static addSound(name, url, dict, fcn) {

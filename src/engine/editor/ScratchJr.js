@@ -89,7 +89,7 @@ export default class ScratchJr {
   }
 
   static get stagecolor() {
-    return stagecolor;
+    return window.Settings ? window.Settings.stageColor : stagecolor;
   }
 
   static get defaultSprite() {
@@ -317,7 +317,7 @@ export default class ScratchJr {
   static onResume() {
     // Re-enable autosaves
     autoSaveEnabled = true;
-    autoSaveSetInterval = window.setInterval(function() {
+    autoSaveSetInterval = window.setInterval(function () {
       if (autoSaveEnabled && !onHold && !Project.saving && !UI.infoBoxOpen) {
         onHold = false;
         Alert.close();
@@ -408,7 +408,7 @@ export default class ScratchJr {
 
   static fullScreen(e) {
     if (gn('full').className == 'fullscreen') {
-      onBackButtonCallback.push(function() {
+      onBackButtonCallback.push(function () {
         var fakeEvent = document.createEvent('TouchEvent');
         fakeEvent.initTouchEvent();
         ScratchJr.quitFullScreen(fakeEvent);
@@ -474,10 +474,10 @@ export default class ScratchJr {
     textForm.name = 'editable';
     var ti = newHTML('input', 'textinput', textForm);
     ti.name = 'field';
-    ti.onkeypress = function(evt) {
+    ti.onkeypress = function (evt) {
       handleKeyPress(evt);
     };
-    textForm.onsubmit = function(evt) {
+    textForm.onsubmit = function (evt) {
       submitOverride(evt);
     };
     function handleKeyPress(e) {
@@ -513,7 +513,7 @@ export default class ScratchJr {
       ScratchJr.numberClicked(e, ti);
     }
 
-    onBackButtonCallback.push(function() {
+    onBackButtonCallback.push(function () {
       ScratchJr.editDone();
     });
   }
@@ -594,7 +594,7 @@ export default class ScratchJr {
         style: {
           left: look.left + delta + 'px'
         },
-        onComplete: function() {
+        onComplete: function () {
           ScriptsPane.scroll.refresh();
         }
       };
@@ -738,7 +738,7 @@ export default class ScratchJr {
         style: {
           left: look.left - delta + 'px'
         },
-        onComplete: function() {
+        onComplete: function () {
           ScriptsPane.scroll.refresh();
         }
       };

@@ -7,13 +7,14 @@ class Index extends React.Component {
   };
 
   async componentDidMount() {
-    const { PlayerJR } = await import('../../src/index');
+    const { PlayerJR } = await import('../../../src/index');
     this.setState({ PlayerDynamic: PlayerJR });
   }
 
   getProject = async () => {
-    const dataBase64 = await import('./data/test.js');
-    return dataBase64.default;
+    const res = await fetch('/proFile/demo.sjr');
+    const base64 = await res.text();
+    return base64;
   };
 
   render() {
@@ -24,7 +25,8 @@ class Index extends React.Component {
         <div className={styles.player}>
           {PlayerDynamic && (
             <PlayerDynamic
-              thumbnail={require('./data/thumbnail.png')}
+              width="375"
+              staticUrl="/static/scratchjr"
               getProject={this.getProject}
             />
           )}

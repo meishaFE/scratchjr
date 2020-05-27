@@ -51,7 +51,7 @@ export default class Menu {
     }
 
     static addImageToDropDown (mu, c, block, fcn) {
-        var img = BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/' + c, 'svg');
+        var img = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/' + c, 'svg');
         var cs = newHTML('div', 'ddchoice', mu);
         var micon = newHTML('canvas', undefined, cs);
         var iconSize = 42;

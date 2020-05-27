@@ -87,6 +87,11 @@ module.exports = {
       {
         from: 'static',
         to: 'static/scratchjr'
+      },
+
+      {
+        from: 'demo/proFile',
+        to: 'proFile'
       }
     ])
   ]

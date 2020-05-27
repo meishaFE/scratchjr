@@ -252,7 +252,7 @@ export default class BlockArg {
     drawChoice (cnv) {
         var ctx = cnv.getContext('2d');
         ctx.clearRect(0, 0, cnv.width, cnv.height);
-        var icon = BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/' + this.icon, 'svg');
+        var icon = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/' + this.icon, 'svg');
         var scale = this.daddy.scale;
         if (!icon.complete) {
             icon.onload = function () {
@@ -318,7 +318,7 @@ export default class BlockArg {
         var value = b.owner.arg.argValue;
         b.owner.arg.argValue = c.substring(c.indexOf('_') + 1, c.length);
         var ctx = b.owner.blockicon.getContext('2d');
-        b.icon = BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/' + c, 'svg');
+        b.icon = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/' + c, 'svg');
         ctx.clearRect(0, 0, 85 * scaleMultiplier * window.devicePixelRatio,
             66 * scaleMultiplier * window.devicePixelRatio);
         if (!b.icon.complete) {
@@ -357,7 +357,7 @@ export default class BlockArg {
         var value = b.owner.arg.argValue;
         b.owner.arg.argValue = BlockSpecs.speeds.indexOf(c);
         var ctx = b.owner.blockicon.getContext('2d');
-        b.icon = BlockSpecs.getImageFrom('/static/scratchjr/assets/blockicons/' + c, 'svg');
+        b.icon = BlockSpecs.getImageFrom(window.sjrStatic + '/assets/blockicons/' + c, 'svg');
         ctx.clearRect(0, 0, 64 * scaleMultiplier * window.devicePixelRatio,
             64 * scaleMultiplier * window.devicePixelRatio);
         // On Android 4.2, clearRect does not work right away. Need to tickle the DOM

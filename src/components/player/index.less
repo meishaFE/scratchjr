@@ -1,22 +1,11 @@
 :global {
   .stagejr {
     position: relative;
-    height: 3.52rem;
     background-color: #fff;
 
     .stageContainer {
       position: relative;
-      height: 2.82rem;
       overflow: hidden;
-
-      .stageCover {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1;
-      }
 
       .stage {
         background: #ffffff;
@@ -28,75 +17,56 @@
     }
 
     .btnContainer {
-      height: 0.7rem;
+      width: 480px;
+      height: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
+      transform-origin: 0 0;
 
       .go {
-        width: 0.4rem;
-        height: 0.4rem;
-        background: url('./images/go.svg') center center;
+        width: 80px;
+        height: 80px;
+        background: url('./images/icon_start.png') center center;
         background-size: auto 100%;
-        margin-right: 0.5rem;
+        margin-right: 100px;
       }
 
       .go.on {
-        background-image: url('./images/go.svg');
+        background-image: url('./images/icon_start.png');
       }
 
       .go.off:active {
-        background-image: url('./images/goPressed.svg');
+        background-image: url('./images/icon_start.png');
       }
 
       .go.off {
-        background-image: url('./images/stop1.svg');
+        background-image: url('./images/icon_stop.png');
       }
 
       .go.on:active {
-        background-image: url('./images/stopPressed1.svg');
+        background-image: url('./images/icon_stop.png');
       }
 
       .resetall {
-        width: 0.4rem;
-        height: 0.4rem;
-        background: url('./images/resetAll.svg') center center;
+        width: 80px;
+        height: 80px;
+        background: url('./images/icon_back.png') center center;
         background-size: auto 110%;
       }
 
       .resetall:active {
-        background-image: url('./images/resetAllPressed.svg');
+        background-image: url('./images/icon_back.png');
       }
     }
 
     .projectImg {
       position: absolute;
       width: 100%;
-      height: 2.82rem;
       top: 0;
       left: 0;
       background: center center;
       background-size: 105%;
-    }
-
-    .playBtn {
-      position: absolute;
-      width: 100%;
-      height: 2.82rem;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.2);
-
-      img {
-        position: absolute;
-        width: 0.6rem;
-        height: 0.6rem;
-        top: 50%;
-        left: 50%;
-        margin: -0.3rem 0 0 -0.3rem;
-        cursor: pointer;
-      }
     }
 
     p.balloon {

@@ -8,21 +8,27 @@ import Spin from '../Spin';
 
 let submiting = false;
 
-window.Settings = Settings;
-MediaLib.loadMediaLib();
-
 class PlayerJR extends Component {
   state = {
-    loading: false,
-    isLoadProject: false
+    loading: false
   };
 
   componentDidMount() {
+    window.sjrStatic = this.props.staticUrl;
+    window.Settings = Settings;
+    if (this.props.stageColor) window.Settings.stageColor = this.props.stageColor;
+    MediaLib.loadMediaLib();
     this.loadProject();
   }
 
   componentWillUnmount() {
     ScratchJr.clearEventAndTimer();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.width !== this.props.width && this.props.width) {
+      this.stageResize();
+    }
   }
 
   loadProject = async () => {
@@ -38,7 +44,6 @@ class PlayerJR extends Component {
       const data = await load(fileBase64);
 
       ScratchJr.appinit(data, () => {
-        let scale = document.body.clientWidth / 480;
         const stageContainer = document.getElementById('stageContainer');
         const btnContainer = document.getElementById('btnContainer');
         const stage = document.getElementById('stage');
@@ -46,22 +51,13 @@ class PlayerJR extends Component {
         const btnResetall = document.getElementById('resetall');
 
         ScratchJr.unfocus();
-        stage.owner.currentZoom = scale;
-        stage.style.webkitTextSizeAdjust = scale * 100 + '%';
-        ScratchJr.stage.setStageScaleAndPosition(scale, 240, 180);
+        this.stageResize();
 
         stageContainer.appendChild(stage);
         btnContainer.appendChild(btnGo);
         btnContainer.appendChild(btnResetall);
 
         this.setState({ isLoadProject: true });
-
-        window.addEventListener('resize', () => {
-          scale = document.body.clientWidth / 480;
-          stage.owner.currentZoom = scale;
-          stage.style.webkitTextSizeAdjust = scale * 100 + '%';
-          ScratchJr.stage.setStageScaleAndPosition(scale, 240, 180);
-        });
       });
     } catch (err) {
       console.log('载入项目失败');
@@ -72,32 +68,33 @@ class PlayerJR extends Component {
     submiting = false;
   };
 
-  /* playGame = () => {
-    this.loadProject();
-  }; */
+  stageResize = () => {
+    const scale = this.props.width / 480;
+    const btnContainer = document.getElementById('btnContainer');
+    const stage = document.getElementById('stage');
+
+    stage.owner.currentZoom = scale;
+    stage.style.webkitTextSizeAdjust = scale * 100 + '%';
+    ScratchJr.stage.setStageScaleAndPosition(scale, 240, 180);
+    btnContainer.style.transform = `scale(${scale})`;
+    btnContainer.style.webkitTransform = `scale(${scale})`;
+  };
 
   render() {
     const { loading } = this.state;
-    // const { isLoadProject, loading } = this.state;
-    // const { thumbnail } = this.props;
+    const { width } = this.props;
+    const height = width * 0.75;
 
     return (
       <React.Fragment>
         <Spin spinning={loading}>
-          <div className="stagejr">
-            <div className="stageContainer" id="stageContainer">
-              {/* <div className="stageCover" /> */}
-            </div>
+          <div className="stagejr" id="scratchWrapper" style={{ width: `${width}px` }}>
+            <div
+              className="stageContainer"
+              id="stageContainer"
+              style={{ width: `${width}px`, height: `${height}px` }}
+            ></div>
             <div className="btnContainer" id="btnContainer" />
-
-            {/* !isLoadProject && (
-              <React.Fragment>
-                <div className="projectImg" style={{ backgroundImage: `url(${thumbnail})` }} />
-                <div className="playBtn">
-                  <img src={require('./images/btn_play.png')} alt="" onClick={this.playGame} />
-                </div>
-              </React.Fragment>
-            ) */}
           </div>
         </Spin>
 
