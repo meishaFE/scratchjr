@@ -18,16 +18,18 @@ export default class Sound {
   }
 
   play() {
-    this.playing = true;
-
     // scratchjr
     // 第一次播放会因为用户没有触发点击报错，延迟执行
+    this.playing = true;
+
     if (this.isPlayed) {
-      this.audio.play();
+      const p = this.audio.play();
+      if (p) p.catch((err) => {});
     } else {
       setTimeout(() => {
         this.isPlayed = true; // 标记是否是第一次播放
-        this.audio.play();
+        const p = this.audio.play();
+        if (p) p.catch((err) => {});
       }, 100);
     }
   }

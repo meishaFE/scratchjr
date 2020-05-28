@@ -6,8 +6,10 @@
     .stageContainer {
       position: relative;
       overflow: hidden;
+      z-index: 1;
 
       .stage {
+        position: absolute;
         background: #ffffff;
         overflow: hidden;
         width: 480px;
@@ -25,6 +27,7 @@
       transform-origin: 0 0;
 
       .go {
+        position: static;
         width: 80px;
         height: 80px;
         background: url('./images/icon_start.png') center center;
@@ -49,6 +52,7 @@
       }
 
       .resetall {
+        position: static;
         width: 80px;
         height: 80px;
         background: url('./images/icon_back.png') center center;
