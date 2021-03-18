@@ -1,6 +1,7 @@
 import { isAndroid } from './lib';
 import Sound from './Sound';
 import Project from '../editor/ui/Project';
+import popBase64 from '@/engine/audio/pop';
 
 ////////////////////////////////////////////////////
 /// Sound Playing
@@ -27,7 +28,7 @@ export default class ScratchAudio {
    * 删除了默认音效
    */
   static init() {
-    ScratchAudio.addSound('pop.mp3', window.sjrStatic + '/pop.mp3', projectSounds);
+    ScratchAudio.addSound('pop.mp3', popBase64, projectSounds);
   }
 
   static addSound(name, url, dict, fcn) {
@@ -47,6 +48,7 @@ export default class ScratchAudio {
     if (!md5 || !Project.files[md5]) {
       return;
     }
+
     ScratchAudio.addSound(md5, Project.files[md5], projectSounds, fcn);
   }
 }

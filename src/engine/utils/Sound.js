@@ -20,18 +20,27 @@ export default class Sound {
   play() {
     // scratchjr
     // 第一次播放会因为用户没有触发点击报错，延迟执行
-    this.playing = true;
+    // this.playing = true;
 
-    if (this.isPlayed) {
-      const p = this.audio.play();
-      if (p) p.catch((err) => {});
-    } else {
-      setTimeout(() => {
-        this.isPlayed = true; // 标记是否是第一次播放
-        const p = this.audio.play();
-        if (p) p.catch((err) => {});
-      }, 100);
-    }
+    // if (this.isPlayed) {
+    //   const p = this.audio.play();
+    //   if (p) p.catch((err) => {});
+    // } else {
+    //   setTimeout(() => {
+    //     this.isPlayed = true; // 标记是否是第一次播放
+    //     const p = this.audio.play();
+    //     if (p) p.catch((err) => {});
+    //   }, 100);
+    // }
+
+    console.log('play audio ----');
+
+    this.playing = true;
+    const p = this.audio.play();
+    if (p)
+      p.catch((err) => {
+        console.log(err);
+      });
   }
 
   // 返回true/false
